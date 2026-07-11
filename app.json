@@ -1,0 +1,61 @@
+{
+  "expo": {
+    "name": "步態平衡",
+    "slug": "gait-balance-tracker",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#667eea"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.cyysongyy.gaitbalance",
+      "infoPlist": {
+        "NSMotionUsageDescription": "用於偵測步態平衡與走路穩定度",
+        "UIBackgroundModes": ["fetch", "processing"],
+        "BGTaskSchedulerPermittedIdentifiers": [
+          "com.cyysongyy.gaitbalance.backgroundfetch"
+        ]
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#667eea"
+      },
+      "package": "com.cyysongyy.gaitbalance",
+      "permissions": [
+        "ACTIVITY_RECOGNITION",
+        "BODY_SENSORS",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "用於偵測步態平衡與走路穩定度"
+        }
+      ],
+      "expo-task-manager",
+      "expo-background-fetch",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#667eea"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "gait-balance-tracker"
+      }
+    }
+  }
+}
